@@ -21,10 +21,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         moveToSecondBtn.setOnClickListener {
+
+//            어떤 내용이 적혔는지?
+            val inputMessage = messageEdt.text.toString()
+
 //            화면 이동인건 동일. => Intent 기초 사용법은 그대로 적용.
 
 //            비행기 티켓
             val myIntent = Intent(this, MySecondActivity::class.java)
+
+//            티켓에 => 데이터 추가 기록.
+            myIntent.putExtra("message", inputMessage)
 
 //            실제 탑승
             startActivity(myIntent)
